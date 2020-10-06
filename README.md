@@ -71,7 +71,7 @@ After running the above steps the following services should be RUNNING in :
 1) Standard HTTP POST request-> when user send data through html form on submit (on backend side there is endpoint that handle POST request and save data into redis)
 2) Standard HTTP GET request -> when user click button for refresh data in table( on backend side there is endpoint that handle request & return data from redis)
 
-The cmost important part:
+The most important part:
 
 3) js socket-io client send data submitted through html form -> on backend side there is Socket-io server which save data into redis and make broadcast message for all connected users
 4) js socket-io client send request for new data through -> on backend side there is Socket-io server handle this request then server fetch data from redis and make reponse
@@ -81,5 +81,13 @@ The cmost important part:
 * You can delete html data table (bot only from your browser, not from redis) & then you can click on 2 available button for fetch new data from server
 (socket io server or standard http request for web server, please note there is two option for fetching data)
 This feature is useful when you want to test fetching data from redis over this two solutions!
+* Please note, the worker layer:
+ ```
+gunicorn run_socket_app:app --worker-class eventlet -w 1 --bind localhost:5000 --reload
+```
+ 
+handling the request messages and generating the responses, layers 1 and 3 should never communicate directly
+
+
 
 ![image info](app/static/Selection_522.png)
