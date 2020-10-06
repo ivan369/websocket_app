@@ -21,6 +21,8 @@
 ## Quickstart (Docker)
 Note: You'll need to have `docker` and `docker-compose` installed.
 ```
+
+docker build --tag flask_socket_app . -> build docker image
 docker-compose up -d -> start app 
 docker-compose down -> stop app
 ```
