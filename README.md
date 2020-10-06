@@ -29,12 +29,7 @@ docker-compose down -> stop app
 * Tail the logs by using `docker-compose logs -f`.
 * Restart individual services by running `docker-compose restart <service_name>`
 
-**Note:** There is example for configure redis in `app/main/settings_template.py` 
-```
-You can set your redis & port in app/main/settings.py if you running app without docker, 
-but please see Dockerfile & docker-compose.yml ... 
-
-```
+**Note:** If you running app without docker image please see  `.env`  
 
 **Note:** If you get a "version unsupported" error, you need to upgrade `docker-compose`:
 ```
@@ -85,4 +80,4 @@ The cmost important part:
 (socket io server or standard http request for web server, please note there is two option for fetching data)
 This feature is useful when you want to test fetching data from redis over this two solutions!
 
-![image info](app/static/Selection_521.png)
+![image info](app/static/Selection_522.png)

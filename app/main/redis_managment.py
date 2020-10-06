@@ -1,7 +1,21 @@
 import json
 import redis
+from os import environ
+from dotenv import load_dotenv
+from pathlib import Path
+import os
 
-from app.main.settings import REDIS_URL, REDIS_PORT
+
+# Get the base directory
+basepath = Path()
+basedir = str(basepath.cwd())
+# Load the environment variables
+envars = basepath.cwd() / '.env'
+load_dotenv(envars)
+# Read an environment variable.
+REDIS_URL = os.getenv('REDIS_URL')
+REDIS_PORT = os.getenv('REDIS_PORT')
+print("EEEEEEEEEEEEEEE", REDIS_PORT, REDIS_URL)
 
 conn = redis.Redis(host=REDIS_URL, port=REDIS_PORT, decode_responses=True)
 
