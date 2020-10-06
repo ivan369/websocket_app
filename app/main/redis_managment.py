@@ -15,7 +15,6 @@ load_dotenv(envars)
 # Read an environment variable.
 REDIS_URL = os.getenv('REDIS_URL')
 REDIS_PORT = os.getenv('REDIS_PORT')
-print("EEEEEEEEEEEEEEE", REDIS_PORT, REDIS_URL)
 
 conn = redis.Redis(host=REDIS_URL, port=REDIS_PORT, decode_responses=True)
 
