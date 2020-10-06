@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    web:
+        build: .
+        ports:
+            - "5000:5000"
+        depends_on:
+            - redis
+    redis:
+        image: redis:alpine
+        restart: always
+        ports:
+            - '9043:6379'
+
+

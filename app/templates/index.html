@@ -1,0 +1,83 @@
+<head>
+	<title>Flask socekt-io</title>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/datatable/DataTables/css/jquery.dataTables.min.css"/>
+
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-websocket_user_list">
+
+			<div class="widget_content mobile_table_wrap">
+				<label>This is a list of all registered users (active / inactive)</label>
+				<button type="button" class="btn btn-primary" id="user_button_flask">Get username list using http request</button>
+				<button type="button" class="btn btn-warning" id="user_button_flask_socekt_io">Get username list socket-io server</button>
+				<br>
+				<br>
+				<br>
+				<button type="button" class="btn btn-dark" id="delete_data_table_content">Delete data table content</button>
+				<br>
+                <table id="user_table" class="table-dark row-border hover order-column" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>Favorite number</th>
+                      </tr>
+                    </thead>
+                </table>
+            </div>
+		</div>
+		<div class="container-contact1">
+
+			<form class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Please enter your username and favorite number
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Username is required">
+					<label>Username</label>
+					<input class="input1" type="text" name="username" placeholder="choice your username" id="username" autocomplete="off">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Favorite number is required">
+					<label>Favorite number</label>
+					<input class="input1" type="text" name="favorite_number" id="favorite_number" placeholder="Choice your favorite number" autocomplete="off">
+					<span class="shadow-input1"></span>
+					<div class="hidden" id="favorite_number_error_message">
+						<p class="favorite_number_error_message">Favorite number must be integer!</p>
+					</div>
+				</div>
+				<br>
+				<p>Save your data using standard POST request: </p>
+				<div class="container-contact1-form-btn">
+					<input type="submit" value="save data using web server" class="contact1-form-btn" id="submit_form_btn_web_server" name="submit_form_btn_web_server">
+				</div>
+				<br>
+				<p>Save your data using socekt-io server: </p>
+				<div class="container-contact1-form-btn">
+					<input type="submit" value="save data using socket-io server" class="contact1-form-btn" id="submit_form_btn_socekt_io_server" name="submit_form_btn_socekt_io_server">
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/vendor/select2/select2.min.js"></script>
+	<script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+	<script type="text/javascript" src="/static/datatable/DataTables/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+
+	<script src="/static/js/main.js"></script>
+</body>
+</html>
