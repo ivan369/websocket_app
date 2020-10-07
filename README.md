@@ -17,6 +17,13 @@
 ### This basic app use: ###
 `js socket-io client` `Flask` `Flask socket-io` `gunicorn` `eventlet` `redis` `DataTables`
 
+* When you run this application:
+```
+a) open several tab, for example on chrome, on your computer (http://0.0.0.0:5000 , this is your js socket-io client), 
+b) fill user input form in one broser tab, then submit your html form,
+c) when you submit, and your input data passed successfully basic validation,
+then your input data is present and displayed in datatable on all your opened client, without refresh page
+```
 
 ## Quickstart (Docker)
 Note: You'll need to have `docker` and `docker-compose` installed.
